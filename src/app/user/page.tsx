@@ -1,9 +1,111 @@
-import React from 'react'
 
-const User = () => {
-  return (
-    <div>User</div>
-  )
+
+
+
+
+"use client";
+
+
+import { CiBookmark } from "react-icons/ci";
+
+import Categores from "@/app/Categores"
+
+import Image from "next/image";
+
+
+interface Product {
+  id: string;
+  code: string;
+  title: string;
 }
 
-export default User
+const Populars = () => {
+  const products: Product[] = [
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    { id: "2", code: "#02.02.02.01-1000", title: "Изделия с армирующими материалами на основе стеклоткани, пришитыми к стеклоизоляционному слою марки" },
+    { id: "1", code: "#02.02.02.01-1000", title: "Удаляемый герметизирующий компаунд для повторного сращивания кабеля" },
+    
+    
+  ];
+
+  return (
+    <>
+      <Categores />
+    <div className="bg-gray-50">
+      <div className="max-w-[1440px] mx-auto p-6 rounded-lg shadow-sm">
+        
+        {/* Sarlavha */}
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-blue-800">
+            KO’P KO’RILGANLAR
+          </h2>
+        </div>
+
+        {/* Filter iconlar */}
+        <div className="flex space-x-2 text-gray-600">
+          <button className="p-2 bg-blue-100 rounded hover:bg-blue-200 transition">
+            <Image src="/img/AD1.png" alt="Filter 1" width={100} height={60} />
+          </button>
+        
+        </div>
+
+        {/* Mahsulotlar */}
+        <div
+          className="
+             grid
+             grid-cols-1      
+             sm:grid-cols-2   
+             gap-6
+             mt-8
+          
+          "
+        >
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="flex justify-between p-4 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-300 transition cursor-pointer"
+            >
+              <div className="flex-1 pr-3">
+                <span className="block text-xs text-gray-500 mb-1">
+                  {product.code}
+                </span>
+                <p className="text-sm text-gray-800 leading-snug line-clamp-3">
+                  {product.title}
+                </p>
+              </div>
+
+              <div className="flex-shrink-0">
+                <CiBookmark />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pastki tugma */}
+        <div className="mt-8 text-center">
+          <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+            Barcha mahsulotlarni ko'rish
+          </button>
+        </div>
+      </div>
+    </div>
+    </>
+  );
+};
+
+export default Populars;
