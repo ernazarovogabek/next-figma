@@ -103,6 +103,8 @@ export default function ConstructionClassifier() {
   };
 
   return (
+
+    
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-blue-600 text-white border-b">
